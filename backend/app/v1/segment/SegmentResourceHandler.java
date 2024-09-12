@@ -53,9 +53,6 @@ public class SegmentResourceHandler {
         }, ec.current());
     }
 
-
-
-
     private String link(Http.Request request, SegmentData data) {
         final String[] hostPort = request.host().split(":");
         String host = hostPort[0];
@@ -63,7 +60,7 @@ public class SegmentResourceHandler {
         final String scheme = request.secure() ? "https" : "http";
         try {
             return UrlBuilder.forHost(scheme, host, port)
-                    .pathSegments("v1", "posts", data.id.toString())
+                    .pathSegments("v1", "segment", data.id.toString())
                     .toUrlString();
         } catch (CharacterCodingException e) {
             throw new IllegalStateException(e);
