@@ -1,8 +1,8 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:conf/posts.routes
+// @SOURCE:conf/segment.routes
 
 
-package posts {
+package segment {
   object RoutesPrefix {
     private var _prefix: String = "/"
     def setPrefix(p: String): Unit = {

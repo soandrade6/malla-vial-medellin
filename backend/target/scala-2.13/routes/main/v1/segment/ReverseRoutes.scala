@@ -1,5 +1,5 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:conf/posts.routes
+// @SOURCE:conf/segment.routes
 
 import play.api.mvc.Call
 
@@ -7,41 +7,41 @@ import play.api.mvc.Call
 import _root_.controllers.Assets.Asset
 import _root_.play.libs.F
 
-// @LINE:2
-package v1.post {
+// @LINE:1
+package v1.segment {
 
-  // @LINE:2
-  class ReversePostController(_prefix: => String) {
+  // @LINE:1
+  class ReverseSegmentController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:5
+    // @LINE:4
     def show(id:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
-    // @LINE:7
+    // @LINE:6
     def delete(id:String): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
-    // @LINE:2
+    // @LINE:1
     def list(): Call = {
       
       Call("GET", _prefix)
     }
   
-    // @LINE:6
+    // @LINE:5
     def update(id:String): Call = {
       
       Call("PUT", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
-    // @LINE:3
+    // @LINE:2
     def create(): Call = {
       
       Call("POST", _prefix)

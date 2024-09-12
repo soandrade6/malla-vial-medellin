@@ -16,7 +16,7 @@ class Routes(
   // @LINE:1
   HomeController_0: controllers.HomeController,
   // @LINE:3
-  posts_Routes_0: posts.Routes,
+  segment_Routes_0: segment.Routes,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -25,13 +25,13 @@ class Routes(
     // @LINE:1
     HomeController_0: controllers.HomeController,
     // @LINE:3
-    posts_Routes_0: posts.Routes
-  ) = this(errorHandler, HomeController_0, posts_Routes_0, "/")
+    segment_Routes_0: segment.Routes
+  ) = this(errorHandler, HomeController_0, segment_Routes_0, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, posts_Routes_0, prefix)
+    new Routes(errorHandler, HomeController_0, segment_Routes_0, prefix)
   }
 
   private val defaultPrefix: String = {
@@ -40,7 +40,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
-    prefixed_posts_Routes_0_1.router.documentation,
+    prefixed_segment_Routes_0_1.router.documentation,
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -67,7 +67,7 @@ class Routes(
   )
 
   // @LINE:3
-  private val prefixed_posts_Routes_0_1 = Include(posts_Routes_0.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "v1/posts"))
+  private val prefixed_segment_Routes_0_1 = Include(segment_Routes_0.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "v1/segment"))
 
 
   def routes: PartialFunction[RequestHeader, Handler] = {
@@ -79,6 +79,6 @@ class Routes(
       }
   
     // @LINE:3
-    case prefixed_posts_Routes_0_1(handler) => handler
+    case prefixed_segment_Routes_0_1(handler) => handler
   }
 }

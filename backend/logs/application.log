@@ -1,14 +1,15 @@
-2024-09-11 19:27:41,975 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-5 - Database [default] initialized
-2024-09-11 19:27:41,984 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2024-09-11 19:27:42,057 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2024-09-11 19:27:42,076 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
-2024-09-11 19:27:42,863 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-5 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-11 19:27:44,563 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-5 - Application started (Dev) (no global state)
-2024-09-11 19:28:30,097 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-5-thread-10 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 40000 milliseconds timeout
-2024-09-11 19:28:30,100 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in play-dev-mode-pekko.actor.default-dispatcher-5 - Running CoordinatedShutdown with reason [ServerStoppedReason]
-2024-09-11 19:28:30,104 [INFO] from play.core.server.PekkoHttpServer in pool-5-thread-10 - Stopping Pekko HTTP server...
-2024-09-11 19:28:30,109 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-2 - Unbinding /[0:0:0:0:0:0:0:0]:9000
-2024-09-11 19:28:30,115 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-3 - Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
-2024-09-11 19:28:30,129 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-6 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
-2024-09-11 19:28:30,137 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-3 - Shutting down connection pool.
-2024-09-11 19:28:30,176 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-4 - Running provided shutdown stop hooks
+2024-09-11 21:11:20,473 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-8 - Database [default] initialized
+2024-09-11 21:11:20,480 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2024-09-11 21:11:20,539 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
+2024-09-11 21:11:20,569 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-11 21:11:21,363 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-8 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11 21:11:23,204 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-8 - Application started (Dev) (no global state)
+2024-09-11 21:18:20,113 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-9 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-11 21:18:20,144 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-10 - Shutting down connection pool.
+2024-09-11 21:18:20,270 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-17 - Registering exception handler: guice-provision-exception-handler
+2024-09-11 21:18:20,386 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-17 - Database [default] initialized
+2024-09-11 21:18:20,386 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-17 - Creating Pool for datasource 'default'
+2024-09-11 21:18:20,390 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-17 - datasource [default] bound to JNDI as DefaultDS
+2024-09-11 21:18:20,409 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-11 21:18:20,570 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-17 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11 21:18:20,720 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-17 - Application started (Dev) (no global state)

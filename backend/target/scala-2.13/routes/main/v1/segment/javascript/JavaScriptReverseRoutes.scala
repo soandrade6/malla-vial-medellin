@@ -1,5 +1,5 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:conf/posts.routes
+// @SOURCE:conf/segment.routes
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -7,20 +7,20 @@ import play.api.routing.JavaScriptReverseRoute
 import _root_.controllers.Assets.Asset
 import _root_.play.libs.F
 
-// @LINE:2
-package v1.post.javascript {
+// @LINE:1
+package v1.segment.javascript {
 
-  // @LINE:2
-  class ReversePostController(_prefix: => String) {
+  // @LINE:1
+  class ReverseSegmentController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:5
+    // @LINE:4
     def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.post.PostController.show",
+      "v1.segment.SegmentController.show",
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
@@ -28,9 +28,9 @@ package v1.post.javascript {
       """
     )
   
-    // @LINE:7
+    // @LINE:6
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.post.PostController.delete",
+      "v1.segment.SegmentController.delete",
       """
         function(id0) {
           return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
@@ -38,9 +38,9 @@ package v1.post.javascript {
       """
     )
   
-    // @LINE:2
+    // @LINE:1
     def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.post.PostController.list",
+      "v1.segment.SegmentController.list",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
@@ -48,9 +48,9 @@ package v1.post.javascript {
       """
     )
   
-    // @LINE:6
+    // @LINE:5
     def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.post.PostController.update",
+      "v1.segment.SegmentController.update",
       """
         function(id0) {
           return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
@@ -58,9 +58,9 @@ package v1.post.javascript {
       """
     )
   
-    // @LINE:3
+    // @LINE:2
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.post.PostController.create",
+      "v1.segment.SegmentController.create",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + """"})
