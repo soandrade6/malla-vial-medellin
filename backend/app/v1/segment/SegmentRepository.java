@@ -7,11 +7,11 @@ import java.util.stream.Stream;
 public interface SegmentRepository {
     CompletionStage<Stream<SegmentData>> list();
 
-    CompletionStage<SegmentData> create(SegmentData postData);
+    CompletionStage<SegmentData> create(SegmentData segmentData);
 
     CompletionStage<Optional<SegmentData>> get(Long id);
 
-    CompletionStage<Optional<SegmentData>> update(Long id, SegmentData postData);
+    CompletionStage<Optional<SegmentData>> update(Long id, SegmentData segmentData);
 
     CompletionStage<Optional<SegmentData> > delete(Long id);
 }
