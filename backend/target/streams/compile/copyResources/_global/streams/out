@@ -1,6 +1,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\application.conf,C:\malla-vial-medellin\backend\target\scala-2.13\classes\application.conf)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\logback.xml,C:\malla-vial-medellin\backend\target\scala-2.13\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\roadway.routes,C:\malla-vial-medellin\backend\target\scala-2.13\classes\roadway.routes)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\routes,C:\malla-vial-medellin\backend\target\scala-2.13\classes\routes)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\segment.routes,C:\malla-vial-medellin\backend\target\scala-2.13\classes\segment.routes)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(C:\malla-vial-medellin\backend\conf\META-INF\persistence.xml,C:\malla-vial-medellin\backend\target\scala-2.13\classes\META-INF\persistence.xml)[0m

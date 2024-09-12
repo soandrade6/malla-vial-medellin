@@ -17,6 +17,8 @@ class Routes(
   HomeController_0: controllers.HomeController,
   // @LINE:3
   segment_Routes_0: segment.Routes,
+  // @LINE:4
+  roadway_Routes_1: roadway.Routes,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -25,13 +27,15 @@ class Routes(
     // @LINE:1
     HomeController_0: controllers.HomeController,
     // @LINE:3
-    segment_Routes_0: segment.Routes
-  ) = this(errorHandler, HomeController_0, segment_Routes_0, "/")
+    segment_Routes_0: segment.Routes,
+    // @LINE:4
+    roadway_Routes_1: roadway.Routes
+  ) = this(errorHandler, HomeController_0, segment_Routes_0, roadway_Routes_1, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, segment_Routes_0, prefix)
+    new Routes(errorHandler, HomeController_0, segment_Routes_0, roadway_Routes_1, prefix)
   }
 
   private val defaultPrefix: String = {
@@ -41,6 +45,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     prefixed_segment_Routes_0_1.router.documentation,
+    prefixed_roadway_Routes_1_2.router.documentation,
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -69,6 +74,9 @@ class Routes(
   // @LINE:3
   private val prefixed_segment_Routes_0_1 = Include(segment_Routes_0.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "v1/segment"))
 
+  // @LINE:4
+  private val prefixed_roadway_Routes_1_2 = Include(roadway_Routes_1.withPrefix(this.prefix + (if (this.prefix.endsWith("/")) "" else "/") + "v1/roadway"))
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -80,5 +88,8 @@ class Routes(
   
     // @LINE:3
     case prefixed_segment_Routes_0_1(handler) => handler
+  
+    // @LINE:4
+    case prefixed_roadway_Routes_1_2(handler) => handler
   }
 }
