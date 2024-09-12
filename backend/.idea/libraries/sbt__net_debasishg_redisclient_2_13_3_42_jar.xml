@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: net.debasishg:redisclient_2.13:3.42:jar" external-system-id="SBT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/net/debasishg/redisclient_2.13/3.42/redisclient_2.13-3.42.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/net/debasishg/redisclient_2.13/3.42/redisclient_2.13-3.42-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/net/debasishg/redisclient_2.13/3.42/redisclient_2.13-3.42-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

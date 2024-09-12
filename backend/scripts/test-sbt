@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+echo "+----------------------------+"
+echo "| Executing tests using sbt  |" 
+echo "+----------------------------+"
+sbt ++$MATRIX_SCALA test
+
+# At least verifies that Gatling tests are compiling
+sbt ++$MATRIX_SCALA ";project gatling; gatling:compile"
