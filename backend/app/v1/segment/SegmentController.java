@@ -60,7 +60,7 @@ public class SegmentController extends Controller{
     public CompletionStage<Result> delete(Http.Request request, String id) {
         return handler.delete(request, id).thenApplyAsync(optionalResource -> {
             return optionalResource.map(resource ->
-                    ok(Json.toJson(resource)) 
+                    ok(Json.toJson(resource))
             ).orElseGet(Results::notFound);
         }, ec.current());
     }
