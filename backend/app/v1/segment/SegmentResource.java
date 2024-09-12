@@ -1,22 +1,30 @@
 package v1.segment;
 
+import v1.roadway.RoadWayData;
+import v1.roadway.RoadWayResource;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class SegmentResource {
     private String id;
     private String link;
     public String segmentNumber;
     public double length;
     public String nomenclature;
+    private List<RoadWayResource> roadways;
 
     public SegmentResource(){
 
     }
 
-    public SegmentResource(String id, String link, String segmentNumber, double length, String nomenclature) {
+    public SegmentResource(String id, String link, String segmentNumber, double length, String nomenclature,List<RoadWayResource> roadways ) {
         this.id = id;
         this.link = link;
         this.segmentNumber = segmentNumber;
         this.length = length;
         this.nomenclature = nomenclature;
+        this.roadways = roadways;
     }
 
     public SegmentResource(SegmentData segmentData, String link){

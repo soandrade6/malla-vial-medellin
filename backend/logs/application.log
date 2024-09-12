@@ -1,0 +1,99 @@
+2024-09-11 22:48:04,858 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-6 - Database [default] initialized
+2024-09-11 22:48:04,864 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2024-09-11 22:48:04,920 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
+2024-09-11 22:48:04,938 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-11 22:48:05,726 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-6 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11 22:48:07,247 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-6 - Application started (Dev) (no global state)
+2024-09-11 23:34:39,895 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-16 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-11 23:34:39,913 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-17 - Shutting down connection pool.
+2024-09-11 23:34:40,214 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-18 - Registering exception handler: guice-provision-exception-handler
+2024-09-11 23:34:40,383 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-18 - Database [default] initialized
+2024-09-11 23:34:40,383 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
+2024-09-11 23:34:40,392 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-18 - datasource [default] bound to JNDI as DefaultDS
+2024-09-11 23:34:40,418 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-5 - Slf4jLogger started
+2024-09-11 23:34:40,599 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-18 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11 23:34:41,027 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-18 - Application started (Dev) (no global state)
+2024-09-11 23:37:16,677 [ERROR] from application.EntityAction in application-pekko.actor.default-dispatcher-12 - Direct exception java.lang.RuntimeException: Segment not found for ID: 55
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Segment not found for ID: 55
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1159)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at play.core.j.ClassLoaderExecutionContext.$anonfun$execute$1(ClassLoaderExecutionContext.scala:64)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:57)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: java.lang.RuntimeException: Segment not found for ID: 55
+	at v1.roadway.RoadWayResourceHandler.lambda$create$3(RoadWayResourceHandler.java:53)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	... 9 common frames omitted
+2024-09-11 23:53:08,622 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-21 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-11 23:53:08,627 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-22 - Shutting down connection pool.
+2024-09-11 23:53:08,903 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-35 - Registering exception handler: guice-provision-exception-handler
+2024-09-11 23:53:09,067 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-35 - Database [default] initialized
+2024-09-11 23:53:09,068 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-35 - Creating Pool for datasource 'default'
+2024-09-11 23:53:09,079 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-35 - datasource [default] bound to JNDI as DefaultDS
+2024-09-11 23:53:09,101 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-4 - Slf4jLogger started
+2024-09-11 23:53:09,262 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-35 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11 23:53:09,584 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-35 - Application started (Dev) (no global state)
+2024-09-12 00:07:57,093 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-8 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-12 00:07:57,107 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-9 - Shutting down connection pool.
+2024-09-12 00:07:57,556 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-49 - Registering exception handler: guice-provision-exception-handler
+2024-09-12 00:07:57,675 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-49 - Database [default] initialized
+2024-09-12 00:07:57,675 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-49 - Creating Pool for datasource 'default'
+2024-09-12 00:07:57,680 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-49 - datasource [default] bound to JNDI as DefaultDS
+2024-09-12 00:07:57,694 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-12 00:07:57,950 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-49 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-12 00:07:58,293 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-49 - Application started (Dev) (no global state)
+2024-09-12 00:07:58,371 [ERROR] from application.EntityAction in application-pekko.actor.default-dispatcher-8 - Direct exception org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: v1.segment.SegmentData.roadways: could not initialize proxy - no Session
+java.util.concurrent.CompletionException: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: v1.segment.SegmentData.roadways: could not initialize proxy - no Session
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:649)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at play.core.j.ClassLoaderExecutionContext.$anonfun$execute$1(ClassLoaderExecutionContext.scala:64)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:57)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: v1.segment.SegmentData.roadways: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:636)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:219)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:138)
+	at org.hibernate.collection.spi.PersistentBag.iterator(PersistentBag.java:369)
+	at java.base/java.util.Spliterators$IteratorSpliterator.estimateSize(Spliterators.java:1959)
+	at java.base/java.util.Spliterator.getExactSizeIfKnown(Spliterator.java:414)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:508)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at v1.segment.SegmentResource.<init>(SegmentResource.java:38)
+	at v1.segment.SegmentResourceHandler.lambda$find$0(SegmentResourceHandler.java:26)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at v1.segment.SegmentController.lambda$list$0(SegmentController.java:28)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	... 9 common frames omitted
+2024-09-12 00:09:30,893 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-7 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-12 00:09:30,925 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-4 - Shutting down connection pool.
+2024-09-12 00:09:31,445 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-48 - Registering exception handler: guice-provision-exception-handler
+2024-09-12 00:09:32,062 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-48 - Database [default] initialized
+2024-09-12 00:09:32,062 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-48 - Creating Pool for datasource 'default'
+2024-09-12 00:09:32,068 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-48 - datasource [default] bound to JNDI as DefaultDS
+2024-09-12 00:09:32,091 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-7 - Slf4jLogger started
+2024-09-12 00:09:32,302 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-48 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-12 00:09:32,560 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-48 - Application started (Dev) (no global state)

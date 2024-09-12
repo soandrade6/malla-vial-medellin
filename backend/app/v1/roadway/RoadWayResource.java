@@ -5,21 +5,27 @@ public class RoadWayResource {
     private String id;
     private String link;
     public double width;
+    public Long segment_id;
 
     public RoadWayResource() {
     }
 
-    public RoadWayResource(String id, String link, double width) {
+    public RoadWayResource(String id, String link, double width, Long segment_id) {
         this.id = id;
         this.link = link;
         this.width = width;
+        this.segment_id = segment_id;
+
     }
 
     public RoadWayResource(RoadWayData roadWayData, String link){
         this.id = roadWayData.id.toString();
         this.link = link;
         this.width = roadWayData.width;
+        this.segment_id = roadWayData.getSegment().getId();
+
     }
+    
 
     public String getId() {
         return id;
@@ -43,5 +49,13 @@ public class RoadWayResource {
 
     public void setWidth(double width) {
         this.width = width;
+    }
+
+    public Long getSegment_id() {
+        return segment_id;
+    }
+
+    public void setSegment_id(Long segment_id) {
+        this.segment_id = segment_id;
     }
 }
