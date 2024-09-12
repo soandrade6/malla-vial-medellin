@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "segment")
-public class Segment {
+public class SegmentData {
 
-    public Segment() {
+    public SegmentData() {
     }
 
-    public Segment(String segmentNumber, double length, String nomenclature){
+    public SegmentData(String segmentNumber, double length, String nomenclature){
         this.segmentNumber = segmentNumber;
         this.length = length;
         this.nomenclature = nomenclature;
