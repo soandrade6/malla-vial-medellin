@@ -2,3 +2,4 @@ GET     /                           controllers.HomeController.index
 
 ->     /v1/segment                    segment.Routes
 ->     /v1/roadway                    roadway.Routes
+->     /v1/curb                       curb.Routes

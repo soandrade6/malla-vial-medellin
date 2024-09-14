@@ -1,5 +1,6 @@
 package v1.segment;
 
+import v1.curb.CurbResource;
 import v1.roadway.RoadWayResource;
 
 import javax.validation.constraints.NotNull;
@@ -23,6 +24,7 @@ public class SegmentResource {
     @Size(min = 1, message = "Nomenclature must not be empty")
     private String nomenclature;
     private List<RoadWayResource> roadways;
+    private List<CurbResource> curbs;
 
     public SegmentResource(){
 
@@ -41,6 +43,7 @@ public class SegmentResource {
         this.segmentNumber = segmentData.getSegmentNumber();
         this.length = segmentData.getLength();
         this.nomenclature = segmentData.getNomenclature();
+        this.roadways = roadways;
     }
 
     public SegmentResource(SegmentData segmentData){
@@ -48,6 +51,7 @@ public class SegmentResource {
         this.segmentNumber = segmentData.getSegmentNumber();
         this.length = segmentData.getLength();
         this.nomenclature = segmentData.getNomenclature();
+        this.roadways = roadways;
     }
 
 

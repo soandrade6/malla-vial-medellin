@@ -72,7 +72,7 @@ public class SegmentResourceHandler {
         final String scheme = request.secure() ? "https" : "http";
         try {
             return UrlBuilder.forHost(scheme, host, port)
-                    .pathSegments("v1", "posts", data.getId().toString())
+                    .pathSegments("v1", "segment", data.getId().toString())
                     .toUrlString();
         } catch (CharacterCodingException e) {
             throw new IllegalStateException(e);

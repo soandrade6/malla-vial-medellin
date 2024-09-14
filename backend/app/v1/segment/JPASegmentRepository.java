@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import v1.curb.CurbData;
 import v1.roadway.RoadWayData;
 import v1.roadway.RoadWayExecutionContext;
 
@@ -69,6 +70,11 @@ public class JPASegmentRepository implements SegmentRepository{
             }
             return List.of();
         }), ec);
+    }
+
+    @Override
+    public CompletionStage<List<CurbData>> getCurbs(Long segmentId) {
+        return null;
     }
 
     private <T> T wrap(Function<EntityManager, T> function) {

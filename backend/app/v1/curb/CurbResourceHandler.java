@@ -1,4 +1,4 @@
-package v1.roadway;
+package v1.curb;
 
 import com.palominolabs.http.url.UrlBuilder;
 import play.libs.concurrent.ClassLoaderExecutionContext;
@@ -13,34 +13,34 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
-public class RoadWayResourceHandler {
+public class CurbResourceHandler {
 
-    private final RoadWayRepository roadWayRepository;
+    private final CurbRepository curbRepository;
     private final SegmentRepository segmentRepository;
     private final ClassLoaderExecutionContext ec;
 
     @Inject
-    public RoadWayResourceHandler(RoadWayRepository roadWayRepository, SegmentRepository segmentRepository, ClassLoaderExecutionContext ec) {
-        this.roadWayRepository = roadWayRepository;
+    public CurbResourceHandler(CurbRepository curbRepository, SegmentRepository segmentRepository, ClassLoaderExecutionContext ec) {
+        this.curbRepository = curbRepository;
         this.segmentRepository = segmentRepository;
         this.ec = ec;
     }
 
-    public CompletionStage<Stream<RoadWayResource>> find(Http.Request request) {
-        return roadWayRepository.list().thenApplyAsync(roadWayDataStream -> {
-            return roadWayDataStream.map(data -> new RoadWayResource(data, link(request, data)));
+    public CompletionStage<Stream<CurbResource>> find(Http.Request request) {
+        return curbRepository.list().thenApplyAsync(curbDataStream -> {
+            return curbDataStream.map(data -> new CurbResource(data, link(request, data)));
         }, ec.current());
     }
 
-    public CompletionStage<RoadWayResource> create(Http.Request request, RoadWayResource resource) {
+    public CompletionStage<CurbResource> create(Http.Request request, CurbResource resource) {
         return segmentRepository.get(resource.getSegment_id())
                 .thenComposeAsync(optionalSegment -> {
                     if (optionalSegment.isPresent()) {
                         SegmentData segment = optionalSegment.get();
-                        RoadWayData data = new RoadWayData(resource.getWidth(), segment);
-                        return roadWayRepository.create(data)
+                        CurbData data = new CurbData(resource.getHeight(), segment);
+                        return curbRepository.create(data)
                                 .thenApplyAsync(savedData -> {
-                                    return new RoadWayResource(savedData, link(request, savedData));
+                                    return new CurbResource(savedData, link(request, savedData));
                                 }, ec.current());
                     } else {
                         throw new RuntimeException("Segment not found for ID: " + resource.getSegment_id());
@@ -48,17 +48,17 @@ public class RoadWayResourceHandler {
                 }, ec.current());
     }
 
-    public CompletionStage<Optional<RoadWayResource>> lookup(Http.Request request, String id) {
-        return roadWayRepository.get(Long.parseLong(id)).thenApplyAsync(optionalData -> {
-            return optionalData.map(data -> new RoadWayResource(data, link(request, data)));
+    public CompletionStage<Optional<CurbResource>> lookup(Http.Request request, String id) {
+        return curbRepository.get(Long.parseLong(id)).thenApplyAsync(optionalData -> {
+            return optionalData.map(data -> new CurbResource(data, link(request, data)));
         }, ec.current());
     }
 
-    public CompletionStage<Optional<RoadWayResource>> update(Http.Request request, String id, RoadWayResource resource) {
-        return roadWayRepository.get(Long.parseLong(id)).thenComposeAsync(optionalData -> {
+    public CompletionStage<Optional<CurbResource>> update(Http.Request request, String id, CurbResource resource) {
+        return curbRepository.get(Long.parseLong(id)).thenComposeAsync(optionalData -> {
             if (optionalData.isPresent()) {
-                RoadWayData existingData = optionalData.get();
-                existingData.setWidth(resource.getWidth());
+                CurbData existingData = optionalData.get();
+                existingData.setHeight(resource.getHeight());
 
                 return segmentRepository.get(resource.getSegment_id()).thenComposeAsync(optionalSegment -> {
                     if (optionalSegment.isPresent()) {
@@ -66,9 +66,9 @@ public class RoadWayResourceHandler {
                         existingData.setSegment(segment);
                     }
 
-                    return roadWayRepository.update(Long.parseLong(id), existingData)
-                            .thenApplyAsync(optionalRoadData -> {
-                                return optionalRoadData.map(op -> new RoadWayResource(op, link(request, op)));
+                    return curbRepository.update(Long.parseLong(id), existingData)
+                            .thenApplyAsync(optionalCurbData -> {
+                                return optionalCurbData.map(op -> new CurbResource(op, link(request, op)));
                             }, ec.current());
                 }, ec.current());
             } else {
@@ -78,28 +78,23 @@ public class RoadWayResourceHandler {
     }
 
 
-    public CompletionStage<Optional<RoadWayResource>> delete(Http.Request request, String id) {
-        return roadWayRepository.delete(Long.parseLong(id)).thenApplyAsync(optionalData -> {
-            return optionalData.map(data -> new RoadWayResource(data, link(request, data)));
+    public CompletionStage<Optional<CurbResource>> delete(Http.Request request, String id) {
+        return curbRepository.delete(Long.parseLong(id)).thenApplyAsync(optionalData -> {
+            return optionalData.map(data -> new CurbResource(data, link(request, data)));
         }, ec.current());
     }
 
-    private String link(Http.Request request, RoadWayData data) {
+    private String link(Http.Request request, CurbData data) {
         final String[] hostPort = request.host().split(":");
         String host = hostPort[0];
         int port = (hostPort.length == 2) ? Integer.parseInt(hostPort[1]) : -1;
         final String scheme = request.secure() ? "https" : "http";
         try {
             return UrlBuilder.forHost(scheme, host, port)
-                    .pathSegments("v1", "roadway", data.getId().toString())
+                    .pathSegments("v1", "curb", data.getId().toString())
                     .toUrlString();
         } catch (CharacterCodingException e) {
             throw new IllegalStateException(e);
         }
     }
-
-
-
-
-
 }

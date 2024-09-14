@@ -1,5 +1,6 @@
 package v1.segment;
 
+import v1.curb.CurbData;
 import v1.roadway.RoadWayData;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface SegmentRepository {
     CompletionStage<Optional<SegmentData>> delete(Long id);
 
     CompletionStage<List<RoadWayData>> getRoadways(Long segmentId);
+
+    CompletionStage<List<CurbData>> getCurbs(Long segmentId);
 }

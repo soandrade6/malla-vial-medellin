@@ -4,6 +4,8 @@ import com.codahale.metrics.Slf4jReporter;
 import com.google.inject.AbstractModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import v1.curb.CurbRepository;
+import v1.curb.JPACurbRepository;
 import v1.roadway.JPARoadWayRepository;
 import v1.roadway.RoadWayRepository;
 import v1.segment.JPASegmentRepository;
@@ -30,6 +32,7 @@ public class Module extends AbstractModule {
         bind(MetricRegistry.class).toProvider(MetricRegistryProvider.class).asEagerSingleton();
         bind(SegmentRepository.class).to(JPASegmentRepository.class).asEagerSingleton();
         bind(RoadWayRepository.class).to(JPARoadWayRepository.class).asEagerSingleton();
+        bind(CurbRepository.class).to(JPACurbRepository.class).asEagerSingleton();
     }
 }
 

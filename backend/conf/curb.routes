@@ -1,0 +1,6 @@
+GET    /                     v1.curb.CurbController.list(request:Request)
+POST   /                     v1.curb.CurbController.create(request:Request)
+
+GET    /:id                 v1.curb.CurbController.show(request:Request, id)
+PUT    /:id                 v1.curb.CurbController.update(request:Request, id)
+DELETE  /:id                v1.curb.CurbController.delete(request:Request, id)

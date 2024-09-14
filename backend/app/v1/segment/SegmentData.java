@@ -2,6 +2,7 @@ package v1.segment;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import v1.curb.CurbData;
 import v1.roadway.RoadWayData;
 
 import javax.validation.constraints.NotNull;
@@ -42,6 +43,10 @@ public class SegmentData {
     @JsonManagedReference
     private List<RoadWayData> roadways;
 
+    @OneToMany(mappedBy = "segment", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonManagedReference
+    private List<CurbData> curbs;
+
     public Long getId() {
         return id;
     }
@@ -80,5 +85,13 @@ public class SegmentData {
 
     public void setRoadways(List<RoadWayData> roadways) {
         this.roadways = roadways;
+    }
+
+    public List<CurbData> getCurbs() {
+        return curbs;
+    }
+
+    public void setCurbs(List<CurbData> curbs) {
+        this.curbs = curbs;
     }
 }
