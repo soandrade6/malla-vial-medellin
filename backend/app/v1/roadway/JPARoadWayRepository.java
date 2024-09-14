@@ -22,11 +22,11 @@ import static java.util.concurrent.CompletableFuture.supplyAsync;
 public class JPARoadWayRepository implements RoadWayRepository{
 
     private final JPAApi jpaApi;
-    private final SegmentExecutionContext ec;
+    private final RoadWayExecutionContext ec;
     private final CircuitBreaker<Optional<RoadWayData>> circuitBreaker = new CircuitBreaker<Optional<RoadWayData>>().withFailureThreshold(1).withSuccessThreshold(3);
 
     @Inject
-    public JPARoadWayRepository(JPAApi api, SegmentExecutionContext ec) {
+    public JPARoadWayRepository(JPAApi api, RoadWayExecutionContext ec) {
         this.jpaApi = api;
         this.ec = ec;
     }

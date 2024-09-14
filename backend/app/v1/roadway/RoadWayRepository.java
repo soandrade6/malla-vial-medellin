@@ -14,5 +14,5 @@ public interface RoadWayRepository {
 
     CompletionStage<Optional<RoadWayData>> update(Long id, RoadWayData roadWayData);
 
-    CompletionStage<Optional<RoadWayData> > delete(Long id);
+    CompletionStage<Optional<RoadWayData>> delete(Long id);
 }

@@ -40,6 +40,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.show(request:Request, id:String)"""),
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.update(request:Request, id:String)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.delete(request:Request, id:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>/roadways""", """v1.segment.SegmentController.getRoadways(request:Request, id:String)"""),
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -147,6 +148,26 @@ class Routes(
     )
   )
 
+  // @LINE:8
+  private lazy val v1_segment_SegmentController_getRoadways5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""", encodeable=true), StaticPart("/roadways")))
+  )
+  private lazy val v1_segment_SegmentController_getRoadways5_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      SegmentController_0.getRoadways(fakeValue[play.mvc.Http.Request], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "segment",
+      "v1.segment.SegmentController",
+      "getRoadways",
+      Seq(classOf[play.mvc.Http.Request], classOf[String]),
+      "GET",
+      this.prefix + """""" + "$" + """id<[^/]+>/roadways""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -183,6 +204,13 @@ class Routes(
       call(params.fromPath[String]("id", None)) { (id) =>
         v1_segment_SegmentController_delete4_invoker.call(
           req => SegmentController_0.delete(req, id))
+      }
+  
+    // @LINE:8
+    case v1_segment_SegmentController_getRoadways5_route(params@_) =>
+      call(params.fromPath[String]("id", None)) { (id) =>
+        v1_segment_SegmentController_getRoadways5_invoker.call(
+          req => SegmentController_0.getRoadways(req, id))
       }
   }
 }

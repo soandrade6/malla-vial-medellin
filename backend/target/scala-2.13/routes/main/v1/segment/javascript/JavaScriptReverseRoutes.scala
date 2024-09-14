@@ -48,6 +48,16 @@ package v1.segment.javascript {
       """
     )
   
+    // @LINE:8
+    def getRoadways: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "v1.segment.SegmentController.getRoadways",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0)) + "/roadways"})
+        }
+      """
+    )
+  
     // @LINE:5
     def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "v1.segment.SegmentController.update",

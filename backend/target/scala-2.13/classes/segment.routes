@@ -4,3 +4,7 @@ POST   /                     v1.segment.SegmentController.create(request:Request
 GET    /:id                 v1.segment.SegmentController.show(request:Request,id)
 PUT    /:id                 v1.segment.SegmentController.update(request:Request, id)
 DELETE  /:id                v1.segment.SegmentController.delete(request:Request, id)
+
+GET   /:id/roadways               v1.segment.SegmentController.getRoadways(request:Request, id)
+
+

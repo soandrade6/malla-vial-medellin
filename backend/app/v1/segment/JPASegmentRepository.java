@@ -8,8 +8,13 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import v1.roadway.RoadWayData;
+import v1.roadway.RoadWayExecutionContext;
+
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -24,7 +29,7 @@ public class JPASegmentRepository implements SegmentRepository{
     private final CircuitBreaker<Optional<SegmentData>> circuitBreaker = new CircuitBreaker<Optional<SegmentData>>().withFailureThreshold(1).withSuccessThreshold(3);
 
     @Inject
-    public JPASegmentRepository(JPAApi api, SegmentExecutionContext ec) {
+    public JPASegmentRepository(JPAApi api, SegmentExecutionContext ec, RoadWayExecutionContext ec2) {
         this.jpaApi = api;
         this.ec = ec;
     }
@@ -53,6 +58,20 @@ public class JPASegmentRepository implements SegmentRepository{
     public CompletionStage<Optional<SegmentData>> delete(Long id) {
         return supplyAsync(() -> wrap(em -> Failsafe.with(circuitBreaker).get(() -> remove(em, id))), ec);
     }
+
+    @Override
+    public CompletionStage<List<RoadWayData>> getRoadways(Long segmentId) {
+        return supplyAsync(() -> wrap(em -> {
+            SegmentData segment = em.find(SegmentData.class, segmentId);
+            if (segment != null) {
+                // Inicializa la colección de roadways
+                segment.getRoadways().size(); // Esto forza la carga de la colección
+                return segment.getRoadways();
+            }
+            return List.of();
+        }), ec);
+    }
+
 
     private <T> T wrap(Function<EntityManager, T> function) {
         return jpaApi.withTransaction(function);

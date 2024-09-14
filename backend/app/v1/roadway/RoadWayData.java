@@ -49,6 +49,4 @@ public class RoadWayData {
     public void setSegment(SegmentData segment) {
         this.segment = segment;
     }
-
-
 }

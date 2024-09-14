@@ -1,10 +1,9 @@
 package v1.segment;
 
-import v1.roadway.RoadWayData;
 import v1.roadway.RoadWayResource;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class SegmentResource {
     private String id;

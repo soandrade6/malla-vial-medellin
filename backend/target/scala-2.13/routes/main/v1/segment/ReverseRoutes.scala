@@ -35,6 +35,12 @@ package v1.segment {
       Call("GET", _prefix)
     }
   
+    // @LINE:8
+    def getRoadways(id:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)) + "/roadways")
+    }
+  
     // @LINE:5
     def update(id:String): Call = {
       

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 import play.libs.concurrent.ClassLoaderExecutionContext;
 import play.mvc.*;
+import v1.roadway.RoadWayResource;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -62,6 +63,12 @@ public class SegmentController extends Controller{
             return optionalResource.map(resource ->
                     ok(Json.toJson(resource))
             ).orElseGet(Results::notFound);
+        }, ec.current());
+    }
+
+    public CompletionStage<Result> getRoadways(Http.Request request, String id) {
+        return handler.getRoadways(request, id).thenApplyAsync(roadways -> {
+            return ok(Json.toJson(roadways));
         }, ec.current());
     }
 }

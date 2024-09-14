@@ -26,7 +26,7 @@ public class SegmentData {
     public double length;
     public String nomenclature;
 
-    @OneToMany(mappedBy = "segment", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "segment", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonManagedReference
     public List<RoadWayData> roadways;
 

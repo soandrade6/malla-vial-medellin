@@ -3,11 +3,14 @@ package v1.segment;
 import com.palominolabs.http.url.UrlBuilder;
 import play.libs.concurrent.ClassLoaderExecutionContext;
 import play.mvc.Http;
+import v1.roadway.RoadWayResource;
 
 import javax.inject.Inject;
 import java.nio.charset.CharacterCodingException;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SegmentResourceHandler {
@@ -53,6 +56,14 @@ public class SegmentResourceHandler {
         }, ec.current());
     }
 
+    public CompletionStage<List<RoadWayResource>> getRoadways(Http.Request request, String segmentId) {
+        return segmentRepository.getRoadways(Long.parseLong(segmentId)).thenApplyAsync(roadways -> {
+            return roadways.stream()
+                    .map(roadway -> new RoadWayResource(roadway)) // Asegúrate de tener un constructor adecuado en RoadWayResource
+                    .collect(Collectors.toList());
+        }, ec.current());
+    }
+
     private String link(Http.Request request, SegmentData data) {
         final String[] hostPort = request.host().split(":");
         String host = hostPort[0];
@@ -66,4 +77,5 @@ public class SegmentResourceHandler {
             throw new IllegalStateException(e);
         }
     }
+
 }

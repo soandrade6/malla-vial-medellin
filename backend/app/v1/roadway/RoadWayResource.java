@@ -25,7 +25,12 @@ public class RoadWayResource {
         this.segment_id = roadWayData.getSegment().getId();
 
     }
-    
+
+    public RoadWayResource(RoadWayData data) {
+        this.id = data.getId().toString();
+        this.width = data.getWidth();
+        this.segment_id = data.getSegment().getId(); // Asumiendo que segmentId es String
+    }
 
     public String getId() {
         return id;
