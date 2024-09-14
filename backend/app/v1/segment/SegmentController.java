@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 import play.libs.concurrent.ClassLoaderExecutionContext;
 import play.mvc.*;
-import v1.roadway.RoadWayResource;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -24,15 +23,15 @@ public class SegmentController extends Controller{
         this.handler = handler;
     }
 
-    public CompletionStage<Result> list(Http.Request request) {
-        return handler.find(request).thenApplyAsync(posts -> {
+    public CompletionStage<Result> list() {
+        return handler.find().thenApplyAsync(posts -> {
             final List<SegmentResource> postList = posts.collect(Collectors.toList());
             return ok(Json.toJson(postList));
         }, ec.current());
     }
 
-    public CompletionStage<Result> show(Http.Request request, String id) {
-        return handler.lookup(request, id).thenApplyAsync(optionalResource -> {
+    public CompletionStage<Result> show(String id) {
+        return handler.lookup(id).thenApplyAsync(optionalResource -> {
             return optionalResource.map(resource ->
                     ok(Json.toJson(resource))
             ).orElseGet(Results::notFound);
@@ -42,7 +41,7 @@ public class SegmentController extends Controller{
     public CompletionStage<Result> update(Http.Request request, String id) {
         JsonNode json = request.body().asJson();
         SegmentResource resource = Json.fromJson(json, SegmentResource.class);
-        return handler.update(request, id, resource).thenApplyAsync(optionalResource -> {
+        return handler.update(id, resource).thenApplyAsync(optionalResource -> {
             return optionalResource.map(r ->
                     ok(Json.toJson(r))
             ).orElseGet(Results::notFound
@@ -53,21 +52,21 @@ public class SegmentController extends Controller{
     public CompletionStage<Result> create(Http.Request request) {
         JsonNode json = request.body().asJson();
         final SegmentResource resource = Json.fromJson(json, SegmentResource.class);
-        return handler.create(request, resource).thenApplyAsync(savedResource -> {
+        return handler.create(resource).thenApplyAsync(savedResource -> {
             return created(Json.toJson(savedResource));
         }, ec.current());
     }
 
-    public CompletionStage<Result> delete(Http.Request request, String id) {
-        return handler.delete(request, id).thenApplyAsync(optionalResource -> {
+    public CompletionStage<Result> delete(String id) {
+        return handler.delete(id).thenApplyAsync(optionalResource -> {
             return optionalResource.map(resource ->
                     ok(Json.toJson(resource))
             ).orElseGet(Results::notFound);
         }, ec.current());
     }
 
-    public CompletionStage<Result> getRoadways(Http.Request request, String id) {
-        return handler.getRoadways(request, id).thenApplyAsync(roadways -> {
+    public CompletionStage<Result> getRoadways(String id) {
+        return handler.getRoadways(id).thenApplyAsync(roadways -> {
             return ok(Json.toJson(roadways));
         }, ec.current());
     }

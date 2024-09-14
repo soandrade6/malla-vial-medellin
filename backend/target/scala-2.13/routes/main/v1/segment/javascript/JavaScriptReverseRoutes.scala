@@ -28,12 +28,12 @@ package v1.segment.javascript {
       """
     )
   
-    // @LINE:6
-    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.segment.SegmentController.delete",
+    // @LINE:8
+    def getRoadways: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "v1.segment.SegmentController.getRoadways",
       """
         function(id0) {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0)) + "/roadways"})
         }
       """
     )
@@ -48,12 +48,12 @@ package v1.segment.javascript {
       """
     )
   
-    // @LINE:8
-    def getRoadways: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "v1.segment.SegmentController.getRoadways",
+    // @LINE:6
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "v1.segment.SegmentController.delete",
       """
         function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0)) + "/roadways"})
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )

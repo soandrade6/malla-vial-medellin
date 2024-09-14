@@ -1,0 +1,9 @@
+[0m[[0m[31merror[0m] [0m[0mC:\malla-vial-medellin\backend\conf\segment.routes:1:1: no arguments allowed for nullary method list: (): java.util.concurrent.CompletionStage[play.mvc.Result][0m
+[0m[[0m[31merror[0m] [0m[0mGET    /                     v1.segment.SegmentController.list(request:Request)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\malla-vial-medellin\backend\conf\segment.routes:4:1: too many arguments (found 2, expected 1) for method show: (x$1: String): java.util.concurrent.CompletionStage[play.mvc.Result][0m
+[0m[[0m[31merror[0m] [0m[0mGET    /:id                 v1.segment.SegmentController.show(request:Request,id)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\malla-vial-medellin\backend\conf\segment.routes:6:1: too many arguments (found 2, expected 1) for method delete: (x$1: String): java.util.concurrent.CompletionStage[play.mvc.Result][0m
+[0m[[0m[31merror[0m] [0m[0mDELETE  /:id                v1.segment.SegmentController.delete(request:Request, id)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\malla-vial-medellin\backend\conf\segment.routes:8:1: too many arguments (found 2, expected 1) for method getRoadways: (x$1: String): java.util.concurrent.CompletionStage[play.mvc.Result][0m
+[0m[[0m[31merror[0m] [0m[0mGET   /:id/roadways               v1.segment.SegmentController.getRoadways(request:Request, id)[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

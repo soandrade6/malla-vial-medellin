@@ -14,7 +14,6 @@ import v1.roadway.RoadWayExecutionContext;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -35,7 +34,7 @@ public class JPASegmentRepository implements SegmentRepository{
     }
 
     @Override
-    public CompletionStage<Stream<SegmentData>> list() {
+    public CompletionStage<Stream<SegmentData>> listSegments() {
         return supplyAsync(() -> wrap(em -> select(em)), ec);
     }
 
@@ -64,14 +63,12 @@ public class JPASegmentRepository implements SegmentRepository{
         return supplyAsync(() -> wrap(em -> {
             SegmentData segment = em.find(SegmentData.class, segmentId);
             if (segment != null) {
-                // Inicializa la colección de roadways
-                segment.getRoadways().size(); // Esto forza la carga de la colección
+                segment.getRoadways().size();
                 return segment.getRoadways();
             }
             return List.of();
         }), ec);
     }
-
 
     private <T> T wrap(Function<EntityManager, T> function) {
         return jpaApi.withTransaction(function);
@@ -81,7 +78,6 @@ public class JPASegmentRepository implements SegmentRepository{
         return Optional.ofNullable(em.find(SegmentData.class, id));
     }
 
-
     private Stream<SegmentData> select(EntityManager em) {
         TypedQuery<SegmentData> query = em.createQuery("SELECT p FROM SegmentData p", SegmentData.class);
         return query.getResultList().stream();
@@ -90,9 +86,9 @@ public class JPASegmentRepository implements SegmentRepository{
     private Optional<SegmentData> modify(EntityManager em, Long id, SegmentData segmentData) throws InterruptedException {
         final SegmentData data = em.find(SegmentData.class, id);
         if (data != null) {
-            data.segmentNumber = segmentData.segmentNumber;
-            data.length = segmentData.length;
-            data.nomenclature = segmentData.nomenclature;
+            data.setSegmentNumber(segmentData.getSegmentNumber());
+            data.setLength(segmentData.getLength());
+            data.setNomenclature(segmentData.getNomenclature());
         }
         return Optional.ofNullable(data);
     }

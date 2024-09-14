@@ -35,12 +35,12 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """v1.segment.SegmentController.list(request:Request)"""),
+    ("""GET""", this.prefix, """v1.segment.SegmentController.list()"""),
     ("""POST""", this.prefix, """v1.segment.SegmentController.create(request:Request)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.show(request:Request, id:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.show(id:String)"""),
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.update(request:Request, id:String)"""),
-    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.delete(request:Request, id:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>/roadways""", """v1.segment.SegmentController.getRoadways(request:Request, id:String)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """v1.segment.SegmentController.delete(id:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>/roadways""", """v1.segment.SegmentController.getRoadways(id:String)"""),
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -53,14 +53,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private lazy val v1_segment_SegmentController_list0_invoker = createInvoker(
-    
-    (req:play.mvc.Http.Request) =>
-      SegmentController_0.list(fakeValue[play.mvc.Http.Request]),
+    SegmentController_0.list(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "segment",
       "v1.segment.SegmentController",
       "list",
-      Seq(classOf[play.mvc.Http.Request]),
+      Nil,
       "GET",
       this.prefix + """""",
       """""",
@@ -93,14 +91,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""", encodeable=true)))
   )
   private lazy val v1_segment_SegmentController_show2_invoker = createInvoker(
-    
-    (req:play.mvc.Http.Request) =>
-      SegmentController_0.show(fakeValue[play.mvc.Http.Request], fakeValue[String]),
+    SegmentController_0.show(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "segment",
       "v1.segment.SegmentController",
       "show",
-      Seq(classOf[play.mvc.Http.Request], classOf[String]),
+      Seq(classOf[String]),
       "GET",
       this.prefix + """""" + "$" + """id<[^/]+>""",
       """""",
@@ -133,14 +129,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""", encodeable=true)))
   )
   private lazy val v1_segment_SegmentController_delete4_invoker = createInvoker(
-    
-    (req:play.mvc.Http.Request) =>
-      SegmentController_0.delete(fakeValue[play.mvc.Http.Request], fakeValue[String]),
+    SegmentController_0.delete(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "segment",
       "v1.segment.SegmentController",
       "delete",
-      Seq(classOf[play.mvc.Http.Request], classOf[String]),
+      Seq(classOf[String]),
       "DELETE",
       this.prefix + """""" + "$" + """id<[^/]+>""",
       """""",
@@ -153,14 +147,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""", encodeable=true), StaticPart("/roadways")))
   )
   private lazy val v1_segment_SegmentController_getRoadways5_invoker = createInvoker(
-    
-    (req:play.mvc.Http.Request) =>
-      SegmentController_0.getRoadways(fakeValue[play.mvc.Http.Request], fakeValue[String]),
+    SegmentController_0.getRoadways(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "segment",
       "v1.segment.SegmentController",
       "getRoadways",
-      Seq(classOf[play.mvc.Http.Request], classOf[String]),
+      Seq(classOf[String]),
       "GET",
       this.prefix + """""" + "$" + """id<[^/]+>/roadways""",
       """""",
@@ -174,8 +166,7 @@ class Routes(
     // @LINE:1
     case v1_segment_SegmentController_list0_route(params@_) =>
       call { 
-        v1_segment_SegmentController_list0_invoker.call(
-          req => SegmentController_0.list(req))
+        v1_segment_SegmentController_list0_invoker.call(SegmentController_0.list())
       }
   
     // @LINE:2
@@ -188,8 +179,7 @@ class Routes(
     // @LINE:4
     case v1_segment_SegmentController_show2_route(params@_) =>
       call(params.fromPath[String]("id", None)) { (id) =>
-        v1_segment_SegmentController_show2_invoker.call(
-          req => SegmentController_0.show(req, id))
+        v1_segment_SegmentController_show2_invoker.call(SegmentController_0.show(id))
       }
   
     // @LINE:5
@@ -202,15 +192,13 @@ class Routes(
     // @LINE:6
     case v1_segment_SegmentController_delete4_route(params@_) =>
       call(params.fromPath[String]("id", None)) { (id) =>
-        v1_segment_SegmentController_delete4_invoker.call(
-          req => SegmentController_0.delete(req, id))
+        v1_segment_SegmentController_delete4_invoker.call(SegmentController_0.delete(id))
       }
   
     // @LINE:8
     case v1_segment_SegmentController_getRoadways5_route(params@_) =>
       call(params.fromPath[String]("id", None)) { (id) =>
-        v1_segment_SegmentController_getRoadways5_invoker.call(
-          req => SegmentController_0.getRoadways(req, id))
+        v1_segment_SegmentController_getRoadways5_invoker.call(SegmentController_0.getRoadways(id))
       }
   }
 }

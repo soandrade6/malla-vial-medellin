@@ -21,14 +21,14 @@ public class SegmentData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
-    public String segmentNumber;
-    public double length;
-    public String nomenclature;
+    private Long id;
+    private String segmentNumber;
+    private double length;
+    private String nomenclature;
 
     @OneToMany(mappedBy = "segment", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonManagedReference
-    public List<RoadWayData> roadways;
+    private List<RoadWayData> roadways;
 
     public Long getId() {
         return id;

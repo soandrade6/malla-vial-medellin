@@ -1,10 +1,10 @@
-GET    /                     v1.segment.SegmentController.list(request:Request)
+GET    /                     v1.segment.SegmentController.list()
 POST   /                     v1.segment.SegmentController.create(request:Request)
 
-GET    /:id                 v1.segment.SegmentController.show(request:Request,id)
+GET    /:id                 v1.segment.SegmentController.show(id)
 PUT    /:id                 v1.segment.SegmentController.update(request:Request, id)
-DELETE  /:id                v1.segment.SegmentController.delete(request:Request, id)
+DELETE  /:id                v1.segment.SegmentController.delete(id)
 
-GET   /:id/roadways               v1.segment.SegmentController.getRoadways(request:Request, id)
+GET   /:id/roadways               v1.segment.SegmentController.getRoadways(id)
 
 

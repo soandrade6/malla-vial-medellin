@@ -8,7 +8,8 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
 public interface SegmentRepository {
-    CompletionStage<Stream<SegmentData>> list();
+
+    CompletionStage<Stream<SegmentData>> listSegments();
 
     CompletionStage<SegmentData> create(SegmentData segmentData);
 

@@ -1,14 +1,60 @@
-2024-09-13 19:52:37,250 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-4 - Database [default] initialized
-2024-09-13 19:52:37,257 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2024-09-13 19:52:37,345 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2024-09-13 19:52:37,403 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-5 - Slf4jLogger started
-2024-09-13 19:52:38,387 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-4 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-13 19:52:39,939 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2024-09-13 20:15:14,089 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-5-thread-10 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 40000 milliseconds timeout
-2024-09-13 20:15:14,097 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in play-dev-mode-pekko.actor.default-dispatcher-14 - Running CoordinatedShutdown with reason [ServerStoppedReason]
-2024-09-13 20:15:14,099 [INFO] from play.core.server.PekkoHttpServer in pool-5-thread-10 - Stopping Pekko HTTP server...
-2024-09-13 20:15:14,106 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-15 - Unbinding /[0:0:0:0:0:0:0:0]:9000
-2024-09-13 20:15:14,117 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-15 - Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
-2024-09-13 20:15:14,125 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-20 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
-2024-09-13 20:15:14,137 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-21 - Shutting down connection pool.
-2024-09-13 20:15:14,190 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-16 - Running provided shutdown stop hooks
+2024-09-13 20:33:32,487 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-4 - Database [default] initialized
+2024-09-13 20:33:32,495 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2024-09-13 20:33:32,551 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 20:33:32,590 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 20:33:33,478 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-4 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 20:33:35,232 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2024-09-13 20:43:54,254 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-pekko.actor.default-dispatcher-17 - 
+
+! @86o4kc2mo - Internal server error, for (GET) [/v1/segment] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[no arguments allowed for nullary method list: (): java.util.concurrent.CompletionStage[play.mvc.Result]]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:119)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:92)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:144)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:144)
+	at sbt.PlayRun$.$anonfun$playRunTask$5(PlayRun.scala:99)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:495)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:495)
+	at play.core.server.DevServerStart$DevServerApplicationProvider$1.get(DevServerStart.scala:189)
+	at play.core.server.PekkoHttpServer.handleRequest(PekkoHttpServer.scala:320)
+	at play.core.server.PekkoHttpServer.$anonfun$createServerBinding$1(PekkoHttpServer.scala:224)
+	at org.apache.pekko.stream.impl.fusing.MapAsyncUnordered$$anon$31.onPush(Ops.scala:1443)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:555)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:506)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:400)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:662)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:532)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:637)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.org$apache$pekko$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:813)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:831)
+	at org.apache.pekko.actor.Actor.aroundReceive(Actor.scala:547)
+	at org.apache.pekko.actor.Actor.aroundReceive$(Actor.scala:545)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:729)
+	at org.apache.pekko.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at org.apache.pekko.actor.ActorCell.invoke(ActorCell.scala:557)
+	at org.apache.pekko.dispatch.Mailbox.processMailbox(Mailbox.scala:280)
+	at org.apache.pekko.dispatch.Mailbox.run(Mailbox.scala:241)
+	at org.apache.pekko.dispatch.Mailbox.exec(Mailbox.scala:253)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+2024-09-13 20:45:05,225 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-10 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 20:45:05,248 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-11 - Shutting down connection pool.
+2024-09-13 20:45:05,531 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-20 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 20:45:05,644 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-20 - Database [default] initialized
+2024-09-13 20:45:05,644 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-20 - Creating Pool for datasource 'default'
+2024-09-13 20:45:05,646 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-20 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 20:45:05,659 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-7 - Slf4jLogger started
+2024-09-13 20:45:05,819 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-20 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 20:45:06,017 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-20 - Application started (Dev) (no global state)
