@@ -3,6 +3,8 @@ package v1.segment;
 import com.palominolabs.http.url.UrlBuilder;
 import play.libs.concurrent.ClassLoaderExecutionContext;
 import play.mvc.Http;
+import v1.curb.CurbData;
+import v1.curb.CurbResource;
 import v1.roadway.RoadWayResource;
 
 import javax.inject.Inject;
@@ -61,6 +63,14 @@ public class SegmentResourceHandler {
         return segmentRepository.getRoadways(Long.parseLong(segmentId)).thenApplyAsync(roadways -> {
             return roadways.stream()
                     .map(roadway -> new RoadWayResource(roadway))
+                    .collect(Collectors.toList());
+        }, ec.current());
+    }
+
+    public CompletionStage<List<CurbResource>> getCurbs(Http.Request request, String segmentId) {
+        return segmentRepository.getCurbs(Long.parseLong(segmentId)).thenApplyAsync(curbs -> {
+            return curbs.stream()
+                    .map(curb -> new CurbResource(curb))
                     .collect(Collectors.toList());
         }, ec.current());
     }

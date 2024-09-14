@@ -74,7 +74,14 @@ public class JPASegmentRepository implements SegmentRepository{
 
     @Override
     public CompletionStage<List<CurbData>> getCurbs(Long segmentId) {
-        return null;
+        return supplyAsync(() -> wrap(em -> {
+            SegmentData segment = em.find(SegmentData.class, segmentId);
+            if (segment != null) {
+                segment.getCurbs().size();
+                return segment.getCurbs();
+            }
+            return List.of();
+        }), ec);
     }
 
     private <T> T wrap(Function<EntityManager, T> function) {

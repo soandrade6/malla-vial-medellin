@@ -30,12 +30,13 @@ public class SegmentResource {
 
     }
 
-    public SegmentResource(Long id, int segmentNumber, double length, String nomenclature,List<RoadWayResource> roadways ) {
+    public SegmentResource(Long id, int segmentNumber, double length, String nomenclature,List<RoadWayResource> roadways, List<CurbResource> curbs ) {
         this.id = id;
         this.segmentNumber = segmentNumber;
         this.length = length;
         this.nomenclature = nomenclature;
         this.roadways = roadways;
+        this.curbs = curbs;
     }
 
     public SegmentResource(SegmentData segmentData, String link){
@@ -43,7 +44,6 @@ public class SegmentResource {
         this.segmentNumber = segmentData.getSegmentNumber();
         this.length = segmentData.getLength();
         this.nomenclature = segmentData.getNomenclature();
-        this.roadways = roadways;
     }
 
     public SegmentResource(SegmentData segmentData){
@@ -51,7 +51,6 @@ public class SegmentResource {
         this.segmentNumber = segmentData.getSegmentNumber();
         this.length = segmentData.getLength();
         this.nomenclature = segmentData.getNomenclature();
-        this.roadways = roadways;
     }
 
 

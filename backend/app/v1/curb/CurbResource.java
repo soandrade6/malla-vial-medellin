@@ -21,6 +21,13 @@ public class CurbResource {
         this.segment_id = curbData.getSegment().getId();
     }
 
+    public CurbResource(CurbData curbData){
+        this.id = curbData.getId();
+        this.height = curbData.getHeight();
+        this.segment_id = curbData.getSegment().getId();
+
+    }
+
     public Long getId() {
         return id;
     }

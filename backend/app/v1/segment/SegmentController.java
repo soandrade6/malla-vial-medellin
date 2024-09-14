@@ -70,4 +70,10 @@ public class SegmentController extends Controller{
             return ok(Json.toJson(roadways));
         }, ec.current());
     }
+
+    public CompletionStage<Result> getCurbs(Http.Request request, String id) {
+        return handler.getCurbs(request, id).thenApplyAsync(roadways -> {
+            return ok(Json.toJson(roadways));
+        }, ec.current());
+    }
 }
