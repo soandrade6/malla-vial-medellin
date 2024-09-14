@@ -1,13 +1,10 @@
 package v1.roadway;
 
-import com.palominolabs.http.url.UrlBuilder;
 import play.libs.concurrent.ClassLoaderExecutionContext;
-import play.mvc.Http;
 import v1.segment.SegmentData;
 import v1.segment.SegmentRepository;
 
 import javax.inject.Inject;
-import java.nio.charset.CharacterCodingException;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -26,86 +23,55 @@ public class RoadWayResourceHandler {
         this.ec = ec;
     }
 
-    public CompletionStage<Stream<RoadWayResource>> find(Http.Request request) {
+    public CompletionStage<Stream<RoadWayResource>> find() {
         return roadWayRepository.list().thenApplyAsync(roadWayDataStream -> {
-            return roadWayDataStream.map(data -> new RoadWayResource(data, link(request, data)));
+            return roadWayDataStream.map(RoadWayResource::new);
         }, ec.current());
     }
 
-    public CompletionStage<RoadWayResource> create(Http.Request request, RoadWayResource resource) {
-        // Obtener el SegmentData por el ID del recurso
+    public CompletionStage<RoadWayResource> create(RoadWayResource resource) {
         return segmentRepository.get(resource.getSegment_id())
                 .thenComposeAsync(optionalSegment -> {
-                    // Si el segmento existe
                     if (optionalSegment.isPresent()) {
                         SegmentData segment = optionalSegment.get();
-                        // Crear el RoadWayData y asignar el SegmentData en el constructor
                         RoadWayData data = new RoadWayData(resource.getWidth(), segment);
-
-                        // Guardar el RoadWayData en el repositorio
                         return roadWayRepository.create(data)
-                                .thenApplyAsync(savedData -> {
-                                    // Crear y devolver el RoadWayResource con el savedData
-                                    return new RoadWayResource(savedData, link(request, savedData));
-                                }, ec.current());
+                                .thenApplyAsync(RoadWayResource::new, ec.current());
                     } else {
-                        // Si no se encuentra el SegmentData, lanzar una excepción o manejar el error
                         throw new RuntimeException("Segment not found for ID: " + resource.getSegment_id());
                     }
                 }, ec.current());
     }
 
-    public CompletionStage<Optional<RoadWayResource>> lookup(Http.Request request, String id) {
+    public CompletionStage<Optional<RoadWayResource>> lookup(String id) {
         return roadWayRepository.get(Long.parseLong(id)).thenApplyAsync(optionalData -> {
-            return optionalData.map(data -> new RoadWayResource(data, link(request, data)));
+            return optionalData.map(RoadWayResource::new);
         }, ec.current());
     }
 
-    public CompletionStage<Optional<RoadWayResource>> update(Http.Request request,String id, RoadWayResource resource) {
-        // Buscar el RoadWayData existente por su ID
+    public CompletionStage<Optional<RoadWayResource>> update(String id, RoadWayResource resource) {
         return roadWayRepository.get(Long.parseLong(id)).thenComposeAsync(optionalData -> {
             if (optionalData.isPresent()) {
                 RoadWayData existingData = optionalData.get();
-
-                // Actualizar solo los campos necesarios
                 existingData.setWidth(resource.getWidth());
-
-                // Si también se necesita actualizar el SegmentData, obtén el SegmentData y actualízalo
                 return segmentRepository.get(resource.getSegment_id()).thenComposeAsync(optionalSegment -> {
                     if (optionalSegment.isPresent()) {
                         SegmentData segment = optionalSegment.get();
-                        existingData.setSegment(segment); // Asignar el nuevo SegmentData si es necesario
+                        existingData.setSegment(segment);
                     }
-
-                    // Guardar los cambios en el RoadWayData actualizado
                     return roadWayRepository.update(Long.parseLong(id), existingData)
                             .thenApplyAsync(updatedOptionalData -> updatedOptionalData
-                                    .map(updatedData -> new RoadWayResource(updatedData, link(request, updatedData))), ec.current());
+                                    .map(RoadWayResource::new), ec.current());
                 }, ec.current());
             } else {
-                // Si no se encuentra el RoadWayData, devolver un Optional vacío
                 return CompletableFuture.completedFuture(Optional.empty());
             }
         }, ec.current());
     }
 
-    public CompletionStage<Optional<RoadWayResource>> delete(Http.Request request, String id) {
+    public CompletionStage<Optional<RoadWayResource>> delete(String id) {
         return roadWayRepository.delete(Long.parseLong(id)).thenApplyAsync(optionalData -> {
-            return optionalData.map(data -> new RoadWayResource(data, link(request, data)));
+            return optionalData.map(RoadWayResource::new);
         }, ec.current());
-    }
-
-    private String link(Http.Request request, RoadWayData data) {
-        final String[] hostPort = request.host().split(":");
-        String host = hostPort[0];
-        int port = (hostPort.length == 2) ? Integer.parseInt(hostPort[1]) : -1;
-        final String scheme = request.secure() ? "https" : "http";
-        try {
-            return UrlBuilder.forHost(scheme, host, port)
-                    .pathSegments("v1", "roadway", data.id.toString())
-                    .toUrlString();
-        } catch (CharacterCodingException e) {
-            throw new IllegalStateException(e);
-        }
     }
 }

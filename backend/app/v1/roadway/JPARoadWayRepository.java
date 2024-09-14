@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import v1.segment.SegmentExecutionContext;
 
 import java.sql.SQLException;
 import java.util.Optional;
@@ -73,7 +72,7 @@ public class JPARoadWayRepository implements RoadWayRepository{
     private Optional<RoadWayData> modify(EntityManager em, Long id, RoadWayData roadWayData) throws InterruptedException {
         final RoadWayData data = em.find(RoadWayData.class, id);
         if (data != null) {
-            data.width = roadWayData.width;
+            data.setWidth(roadWayData.getWidth());
         }
         return Optional.ofNullable(data);
     }

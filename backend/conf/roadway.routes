@@ -1,6 +1,6 @@
-GET    /                     v1.roadway.RoadWayController.list(request:Request)
+GET    /                     v1.roadway.RoadWayController.list()
 POST   /                     v1.roadway.RoadWayController.create(request:Request)
 
-GET    /:id                 v1.roadway.RoadWayController.show(request:Request,id)
+GET    /:id                 v1.roadway.RoadWayController.show(id)
 PUT    /:id                 v1.roadway.RoadWayController.update(request:Request, id)
-DELETE  /:id                v1.roadway.RoadWayController.delete(request:Request, id)
+DELETE  /:id                v1.roadway.RoadWayController.delete(id)

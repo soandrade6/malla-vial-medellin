@@ -18,8 +18,8 @@ public class RoadWayData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
-    public double width;
+    private Long id;
+    private double width;
 
     @ManyToOne
     @JoinColumn(name = "segment_id")

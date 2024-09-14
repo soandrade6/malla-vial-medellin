@@ -58,3 +58,15 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[no arguments all
 2024-09-13 20:45:05,659 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-7 - Slf4jLogger started
 2024-09-13 20:45:05,819 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-20 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-09-13 20:45:06,017 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2024-09-13 21:03:37,744 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-21 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 21:03:37,747 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-22 - Shutting down connection pool.
+2024-09-13 21:03:37,838 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-27 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 21:03:37,954 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-27 - Database [default] initialized
+2024-09-13 21:03:37,954 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
+2024-09-13 21:03:37,960 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 21:03:37,971 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 21:03:38,110 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-27 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 21:03:38,250 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-27 - Application started (Dev) (no global state)
+2024-09-13 21:13:17,814 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-33 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 21:13:17,817 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-36 - Shutting down connection pool.
+2024-09-13 21:13:17,971 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-33 - Registering exception handler: guice-provision-exception-handler
