@@ -23,10 +23,10 @@ package v1.segment {
       Call("GET", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
-    // @LINE:8
-    def getRoadways(id:String): Call = {
+    // @LINE:6
+    def delete(id:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)) + "/roadways")
+      Call("DELETE", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
     // @LINE:1
@@ -35,10 +35,10 @@ package v1.segment {
       Call("GET", _prefix)
     }
   
-    // @LINE:6
-    def delete(id:String): Call = {
+    // @LINE:8
+    def getRoadways(id:String): Call = {
       
-      Call("DELETE", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)) + "/roadways")
     }
   
     // @LINE:5

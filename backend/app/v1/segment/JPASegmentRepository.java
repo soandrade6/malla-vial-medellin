@@ -1,5 +1,6 @@
 package v1.segment;
 
+import jakarta.persistence.Query;
 import net.jodah.failsafe.CircuitBreaker;
 import net.jodah.failsafe.Failsafe;
 import play.db.jpa.JPAApi;

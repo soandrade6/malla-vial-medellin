@@ -1,14 +1,24 @@
-2024-09-13 20:33:32,487 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-4 - Database [default] initialized
-2024-09-13 20:33:32,495 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2024-09-13 20:33:32,551 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2024-09-13 20:33:32,590 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
-2024-09-13 20:33:33,478 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-4 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-13 20:33:35,232 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2024-09-13 20:43:54,254 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-pekko.actor.default-dispatcher-17 - 
+2024-09-13 21:51:15,993 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-4 - Database [default] initialized
+2024-09-13 21:51:15,998 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2024-09-13 21:51:16,048 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 21:51:16,070 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 21:51:16,949 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-4 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 21:51:18,550 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2024-09-13 22:07:00,801 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-11 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 22:07:00,816 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-12 - Shutting down connection pool.
+2024-09-13 22:07:01,005 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-18 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 22:07:01,153 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-18 - Database [default] initialized
+2024-09-13 22:07:01,153 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
+2024-09-13 22:07:01,158 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-18 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 22:07:01,176 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 22:07:01,336 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-18 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 22:07:01,556 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-18 - Application started (Dev) (no global state)
+2024-09-13 22:23:51,535 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-pekko.actor.default-dispatcher-23 - 
 
-! @86o4kc2mo - Internal server error, for (GET) [/v1/segment] ->
+! @86o57f881 - Internal server error, for (GET) [/v1/segment] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[no arguments allowed for nullary method list: (): java.util.concurrent.CompletionStage[play.mvc.Result]]
+play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method list: (x$1: play.mvc.Http.Request): java.util.concurrent.CompletionStage[play.mvc.Result].
+Unspecified value parameter x$1.]
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
 	at scala.Option.map(Option.scala:230)
@@ -49,24 +59,197 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[no arguments all
 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
-2024-09-13 20:45:05,225 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-10 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
-2024-09-13 20:45:05,248 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-11 - Shutting down connection pool.
-2024-09-13 20:45:05,531 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-20 - Registering exception handler: guice-provision-exception-handler
-2024-09-13 20:45:05,644 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-20 - Database [default] initialized
-2024-09-13 20:45:05,644 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-20 - Creating Pool for datasource 'default'
-2024-09-13 20:45:05,646 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-20 - datasource [default] bound to JNDI as DefaultDS
-2024-09-13 20:45:05,659 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-7 - Slf4jLogger started
-2024-09-13 20:45:05,819 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-20 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-13 20:45:06,017 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-20 - Application started (Dev) (no global state)
-2024-09-13 21:03:37,744 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-21 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
-2024-09-13 21:03:37,747 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-22 - Shutting down connection pool.
-2024-09-13 21:03:37,838 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-27 - Registering exception handler: guice-provision-exception-handler
-2024-09-13 21:03:37,954 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-27 - Database [default] initialized
-2024-09-13 21:03:37,954 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
-2024-09-13 21:03:37,960 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - datasource [default] bound to JNDI as DefaultDS
-2024-09-13 21:03:37,971 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
-2024-09-13 21:03:38,110 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-27 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-13 21:03:38,250 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-27 - Application started (Dev) (no global state)
-2024-09-13 21:13:17,814 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-33 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
-2024-09-13 21:13:17,817 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-36 - Shutting down connection pool.
-2024-09-13 21:13:17,971 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-33 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 22:24:56,581 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-10 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 22:24:56,592 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-11 - Shutting down connection pool.
+2024-09-13 22:24:56,798 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-27 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 22:24:56,929 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-27 - Database [default] initialized
+2024-09-13 22:24:56,930 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
+2024-09-13 22:24:56,940 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-27 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 22:24:56,957 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 22:24:57,122 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-27 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 22:24:57,541 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-27 - Application started (Dev) (no global state)
+2024-09-13 22:25:31,328 [ERROR] from play.api.http.DefaultHttpErrorHandler in application-pekko.actor.default-dispatcher-6 - 
+
+! @86o57l08p - Internal server error, for (POST) [/v1/segment] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "v1.segment.SegmentResource.getSegmentNumber()" is null]]
+	at play.api.http.HttpErrorHandlerExceptions$.$anonfun$convertToPlayException$2(HttpErrorHandler.scala:400)
+	at scala.Option.map(Option.scala:242)
+	at play.api.http.HttpErrorHandlerExceptions$.convertToPlayException(HttpErrorHandler.scala:398)
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:390)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
+	at play.core.server.PekkoHttpServer$$anonfun$invokeAction$1$1.applyOrElse(PekkoHttpServer.scala:482)
+	at play.core.server.PekkoHttpServer$$anonfun$invokeAction$1$1.applyOrElse(PekkoHttpServer.scala:474)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at org.apache.pekko.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:73)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:110)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at org.apache.pekko.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:110)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:57)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "v1.segment.SegmentResource.getSegmentNumber()" is null
+	at v1.segment.SegmentResourceHandler.create(SegmentResourceHandler.java:34)
+	at v1.segment.SegmentController.create(SegmentController.java:55)
+	at segment.Routes$$anonfun$routes$1.$anonfun$applyOrElse$6(Routes.scala:183)
+	at play.core.routing.HandlerInvokerFactory$$anon$9.resultCall(HandlerInvoker.scala:165)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:125)
+	at play.core.j.JavaAction$$anon$1.$anonfun$call$1(JavaAction.scala:128)
+	at play.api.mvc.BodyParser$.$anonfun$parseBody$4(Action.scala:241)
+	at scala.Option.getOrElse(Option.scala:201)
+	at play.api.mvc.BodyParser$.parseBody(Action.scala:239)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:136)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
+	at action.EntityAction.doCall(EntityAction.java:60)
+	at action.EntityAction.call(EntityAction.java:49)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:192)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at play.core.j.ClassLoaderExecutionContext.$anonfun$execute$1(ClassLoaderExecutionContext.scala:64)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:65)
+	at play.core.j.ClassLoaderExecutionContext.execute(ClassLoaderExecutionContext.scala:59)
+	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:429)
+	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:338)
+	at scala.concurrent.impl.Promise$DefaultPromise.dispatchOrAddCallbacks(Promise.scala:312)
+	at scala.concurrent.impl.Promise$DefaultPromise.map(Promise.scala:182)
+	at scala.concurrent.Future$.apply(Future.scala:687)
+	at play.core.j.JavaAction.apply(JavaAction.scala:193)
+	at play.api.mvc.Action.$anonfun$apply$6(Action.scala:83)
+	at play.api.mvc.BodyParser$.$anonfun$runParserThenInvokeAction$1(Action.scala:260)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	... 12 common frames omitted
+2024-09-13 23:50:59,594 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-pekko.actor.default-dispatcher-53 - 
+
+! @86o5j0k8k - Internal server error, for (GET) [/v1/roadway] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[method getRoadways in class v1.segment.SegmentResourceHandler cannot be applied to given types;
+  required: play.mvc.Http.Request,java.lang.String
+  found:    java.lang.String
+  reason: actual and formal argument lists differ in length]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:119)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:92)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:144)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:144)
+	at sbt.PlayRun$.$anonfun$playRunTask$5(PlayRun.scala:99)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:495)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:495)
+	at play.core.server.DevServerStart$DevServerApplicationProvider$1.get(DevServerStart.scala:189)
+	at play.core.server.PekkoHttpServer.handleRequest(PekkoHttpServer.scala:320)
+	at play.core.server.PekkoHttpServer.$anonfun$createServerBinding$1(PekkoHttpServer.scala:224)
+	at org.apache.pekko.stream.impl.fusing.MapAsyncUnordered$$anon$31.onPush(Ops.scala:1443)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:555)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:506)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:400)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:662)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:532)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:637)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.org$apache$pekko$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:813)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:831)
+	at org.apache.pekko.actor.Actor.aroundReceive(Actor.scala:547)
+	at org.apache.pekko.actor.Actor.aroundReceive$(Actor.scala:545)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:729)
+	at org.apache.pekko.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at org.apache.pekko.actor.ActorCell.invoke(ActorCell.scala:557)
+	at org.apache.pekko.dispatch.Mailbox.processMailbox(Mailbox.scala:280)
+	at org.apache.pekko.dispatch.Mailbox.run(Mailbox.scala:241)
+	at org.apache.pekko.dispatch.Mailbox.exec(Mailbox.scala:253)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+2024-09-13 23:55:51,782 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-pekko.actor.default-dispatcher-55 - 
+
+! @86o5jhajn - Internal server error, for (GET) [/v1/roadway] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method getRoadways: (x$1: play.mvc.Http.Request, x$2: String): java.util.concurrent.CompletionStage[play.mvc.Result].
+Unspecified value parameter x$2.]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:28)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:119)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:92)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:144)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:144)
+	at sbt.PlayRun$.$anonfun$playRunTask$5(PlayRun.scala:99)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:495)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:495)
+	at play.core.server.DevServerStart$DevServerApplicationProvider$1.get(DevServerStart.scala:189)
+	at play.core.server.PekkoHttpServer.handleRequest(PekkoHttpServer.scala:320)
+	at play.core.server.PekkoHttpServer.$anonfun$createServerBinding$1(PekkoHttpServer.scala:224)
+	at org.apache.pekko.stream.impl.fusing.MapAsyncUnordered$$anon$31.onPush(Ops.scala:1443)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:555)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:506)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:400)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:662)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:532)
+	at org.apache.pekko.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:637)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.org$apache$pekko$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:813)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:831)
+	at org.apache.pekko.actor.Actor.aroundReceive(Actor.scala:547)
+	at org.apache.pekko.actor.Actor.aroundReceive$(Actor.scala:545)
+	at org.apache.pekko.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:729)
+	at org.apache.pekko.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at org.apache.pekko.actor.ActorCell.invoke(ActorCell.scala:557)
+	at org.apache.pekko.dispatch.Mailbox.processMailbox(Mailbox.scala:280)
+	at org.apache.pekko.dispatch.Mailbox.run(Mailbox.scala:241)
+	at org.apache.pekko.dispatch.Mailbox.exec(Mailbox.scala:253)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+2024-09-13 23:56:35,394 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-19 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-13 23:56:35,438 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-20 - Shutting down connection pool.
+2024-09-13 23:56:35,526 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-55 - Registering exception handler: guice-provision-exception-handler
+2024-09-13 23:56:35,809 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-55 - Database [default] initialized
+2024-09-13 23:56:35,809 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-55 - Creating Pool for datasource 'default'
+2024-09-13 23:56:35,820 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-55 - datasource [default] bound to JNDI as DefaultDS
+2024-09-13 23:56:35,849 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-13 23:56:36,227 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-55 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-13 23:56:36,587 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-55 - Application started (Dev) (no global state)
+2024-09-13 23:57:24,884 [ERROR] from application.EntityAction in application-pekko.actor.default-dispatcher-7 - Direct exception java.lang.RuntimeException: Segment not found for ID: 25
+java.util.concurrent.CompletionException: java.lang.RuntimeException: Segment not found for ID: 25
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1159)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at play.core.j.ClassLoaderExecutionContext.$anonfun$execute$1(ClassLoaderExecutionContext.scala:64)
+	at org.apache.pekko.dispatch.TaskInvocation.run(AbstractDispatcher.scala:59)
+	at org.apache.pekko.dispatch.ForkJoinExecutorConfigurator$PekkoForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:57)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: java.lang.RuntimeException: Segment not found for ID: 25
+	at v1.roadway.RoadWayResourceHandler.lambda$create$3(RoadWayResourceHandler.java:46)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	... 9 common frames omitted
+2024-09-14 00:03:39,073 [INFO] from org.apache.pekko.actor.CoordinatedShutdown in application-pekko.actor.default-dispatcher-20 - Running CoordinatedShutdown with reason [ApplicationStoppedReason]
+2024-09-14 00:03:39,085 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-21 - Shutting down connection pool.
+2024-09-14 00:03:39,192 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-63 - Registering exception handler: guice-provision-exception-handler
+2024-09-14 00:03:39,318 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-63 - Database [default] initialized
+2024-09-14 00:03:39,318 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-63 - Creating Pool for datasource 'default'
+2024-09-14 00:03:39,321 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-63 - datasource [default] bound to JNDI as DefaultDS
+2024-09-14 00:03:39,338 [INFO] from org.apache.pekko.event.slf4j.Slf4jLogger in application-pekko.actor.default-dispatcher-6 - Slf4jLogger started
+2024-09-14 00:03:39,480 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-63 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-14 00:03:39,648 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-63 - Application started (Dev) (no global state)

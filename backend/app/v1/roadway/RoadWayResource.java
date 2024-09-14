@@ -16,6 +16,12 @@ public class RoadWayResource {
 
     }
 
+    public RoadWayResource(RoadWayData data, String link) {
+        this.id = data.getId();
+        this.width = data.getWidth();
+        this.segment_id = data.getSegment().getId();
+    }
+
     public RoadWayResource(RoadWayData data) {
         this.id = data.getId();
         this.width = data.getWidth();
