@@ -20,13 +20,30 @@ This API provides a system for managing the city's road segments, including thei
   Retrieves a list of all road segments.
 
 - **POST** `/segment`  
-  Creates a new road segment.
+  Creates a new road segment.  
+  **Body Parameters:**
+  - `int segmentNumber`: The unique number of the road segment.
+  - `double length`: The length of the road segment.
+  - `String nomenclature`: The nomenclature of the road segment.
+
+  **Example:**
+  ```json
+  {
+    "segmentNumber": 123,
+    "length": 150.5,
+    "nomenclature": "Avenida Principal"
+  }
 
 - **GET** `/segment/:id`  
   Retrieves details of a specific road segment by ID.
 
 - **PUT** `/segment/:id`  
   Updates a specific road segment by ID.
+  
+  **Body Parameters:**
+  - `int segmentNumber`
+  - `double length`
+  - `String nomenclature`
 
 - **DELETE** `/segment/:id`  
   Deletes a specific road segment by ID.
@@ -43,13 +60,30 @@ This API provides a system for managing the city's road segments, including thei
   Retrieves a list of all roadways.
 
 - **POST** `/roadway`  
-  Creates a new roadway.
+  Creates a new roadway associated with a segment.
+  
+  **Body Parameters:**
+
+  - `double width:` The width of the roadway.
+  - `Long segment_id:` The ID of the segment to which the roadway belongs.
+ 
+  **Example:**
+  ```json
+  {
+  "width": 12.5,
+  "segment_id": 1
+  }
 
 - **GET** `/roadway/:id`  
   Retrieves details of a specific roadway by ID.
 
 - **PUT** `/roadway/:id`  
   Updates a specific roadway by ID.
+  
+  **Body Parameters:**
+
+  - `double width`
+  - `Long segment_id`
 
 - **DELETE** `/roadway/:id`  
   Deletes a specific roadway by ID.
@@ -60,7 +94,21 @@ This API provides a system for managing the city's road segments, including thei
   Retrieves a list of all curbs.
 
 - **POST** `/curb`  
-  Creates a new curb.
+  Creates a new curb associated with a segment.
+  
+  **Body Parameters:**
+
+  - `double height:` The height of the curb.
+  - `Long segment_id:` The ID of the segment to which the curb belongs.
+  
+  Example:
+  ```json
+  {
+    "height": 0.25,
+    "segment_id": 1
+  }
+
+
 
 - **GET** `/curb/:id`  
   Retrieves details of a specific curb by ID.
@@ -68,8 +116,13 @@ This API provides a system for managing the city's road segments, including thei
 - **PUT** `/curb/:id`  
   Updates a specific curb by ID.
 
+   **Body Parameters:**
+
+  - `double height`
+  - `Long segment_id`
+
 - **DELETE** `/curb/:id`  
   Deletes a specific curb by ID.
 
-## Project Structure
+
 
