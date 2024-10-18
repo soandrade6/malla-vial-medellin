@@ -126,3 +126,53 @@ This API provides a system for managing the city's road segments, including thei
 
 
 
+# How to Run the Project
+
+This project is a RESTful API built with Play Framework, Java, and PostgreSQL.
+
+## Prerequisites
+
+- **Java 8+**
+- **SBT 1.5+**
+- **PostgreSQL**
+- **Git**
+
+## Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/soandrade6/malla-vial-medellin.git
+   cd malla-vial-medellin
+   ```
+
+2. Create the database:
+
+   ```bash
+   psql -U postgres -c "CREATE DATABASE road_segments;"
+   ```
+
+3. Update the database credentials in `application.conf`:
+
+   ```hocon
+   db.default.url="jdbc:postgresql://localhost:5432/road_segments"
+   db.default.username="postgres"
+   db.default.password="your_password"
+   ```
+
+## Run the Project
+
+1. Compile and run:
+
+   ```bash
+   sbt run
+   ```
+
+2. Access the API at:
+
+   ```
+   http://localhost:9000/
+   ```
+
+
+
